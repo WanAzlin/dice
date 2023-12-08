@@ -58,6 +58,7 @@ class _DicePageState extends State<DicePage> {
                       setState(() {
                         firstDiceNumber = Random().nextInt(6) + 1;
                         totalRoll = totalRoll +1;
+                        
                       });
                       print('Is Pressed $totalRoll time');
                     },
@@ -72,7 +73,7 @@ class _DicePageState extends State<DicePage> {
                       onPressed: () {
                         setState(() {
                           secondDiceNumber = Random().nextInt(6) + 1;
-                          print('Is Pressed');
+                          print('Is Pressed $totalRoll time');
                         });
                       },
                       child: Image.asset('images/dice$secondDiceNumber.png')),
