@@ -25,7 +25,7 @@ class DicePage extends StatefulWidget {
 class _DicePageState extends State<DicePage> {
   int firstDiceNumber = 1;
   int secondDiceNumber = 3;
-
+  int totalRoll = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,12 +34,12 @@ class _DicePageState extends State<DicePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Padding(
-            padding:  EdgeInsets.all(100.0),
+            padding:  EdgeInsets.all(50.0),
             child:  
             Text(
               'Roll The Dice',
               style: TextStyle(
-                    fontSize: 40.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontFamily: "Pacifico",
@@ -57,8 +57,9 @@ class _DicePageState extends State<DicePage> {
                       //0,1,2,3,4,5 -> 6 means start with Number 0. so the maximum should be 5 if counted from 0
                       setState(() {
                         firstDiceNumber = Random().nextInt(6) + 1;
+                        totalRoll = totalRoll +1;
                       });
-                      print('Is Pressed');
+                      print('Is Pressed $totalRoll time');
                     },
                     child: Image.asset('images/dice$firstDiceNumber.png'),
                   ),
